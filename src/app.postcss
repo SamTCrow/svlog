@@ -5,7 +5,26 @@
 
 /* rocket theme */
 @font-face {
+	font-family: 'Inter';
+	src: url('/fonts/Inter.ttf');
+}
+
+@font-face {
 	font-family: 'Space Grotesk';
 	src: url('/fonts/SpaceGrotesk.ttf');
-	font-display: swap;
+}
+
+@font-face {
+	font-family: 'JetBrainsMono';
+	src: url('/fonts/JetBrainsMono.ttf');
+}
+
+:root [data-theme='rocket'] {
+	--theme-font-family-base: 'Inter', 'JetBrainsMono', sans-serif;
+	--theme-font-family-heading: 'Inter', 'JetBrainsMono', sans-serif;
+}
+
+html,
+body {
+	@apply h-full overflow-hidden;
 }
