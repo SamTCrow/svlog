@@ -4,18 +4,18 @@
 	import { createEventDispatcher } from 'svelte';
 
 	const dispatch = createEventDispatcher();
-  const openDrawer = () => {
-        dispatch("openDrawer");
-    }
+	const openDrawer = () => {
+		dispatch('openDrawer');
+	};
 </script>
 
 <header
-	class="flex justify-between lg:p-4 p-2 mb-4 text-lg font-medium shadow-md bg-surface-100-800-token"
+	class="flex justify-between lg:p-4 p-2 text-lg font-medium shadow-md bg-surface-100-800-token"
 >
 	<div>
 		<a href="/" class="text-xl">{config.title}</a>
 	</div>
-	<button class="md:hidden btn btn-sm" on:click={openDrawer}>
+	<button class="md:hidden btn btn-sm" on:click={openDrawer} title="Open menu">
 		<span>
 			<svg viewBox="0 0 100 80" class="fill-token w-4 h-4">
 				<rect width="100" height="20" />

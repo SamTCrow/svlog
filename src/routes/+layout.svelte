@@ -41,12 +41,14 @@
 </Drawer>
 <AppShell>
 	<svelte:fragment slot="header"><Header on:openDrawer={drawerOpen} /></svelte:fragment>
-	<svelte:fragment slot="sidebarLeft">Sidebar Left</svelte:fragment>
-	<svelte:fragment slot="sidebarRight"><p>Sidebar Right</p></svelte:fragment>
+	<svelte:fragment slot="sidebarLeft"></svelte:fragment>
+	<svelte:fragment slot="sidebarRight"></svelte:fragment>
 	<!-- (pageHeader) -->
+	<svelte:fragment slot="pageHeader"></svelte:fragment>
 	<!-- Router Slot -->
 	<slot />
 	<!-- ---- / ---- -->
 	<svelte:fragment slot="pageFooter"><Footer /></svelte:fragment>
 	<!-- (footer) -->
+	<svelte:fragment slot="footer"></svelte:fragment>
 </AppShell>

@@ -2,8 +2,10 @@
 title: First post
 description: First post.
 date: '2023-4-14'
-categories: ['sveltekit', 'svelte']
+tags: ['sveltekit', 'svelte']
 published: true
+category: Article
+image: https://placehold.co/600x400
 ---
 
 ## Markdown

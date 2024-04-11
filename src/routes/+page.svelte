@@ -1,18 +1,14 @@
 <script lang="ts">
-	import { formatDate } from '$lib/utils/formatDate';
+	import PostCard from '$lib/components/postCard.svelte';
 
 	export let data;
-
-	console.log(data);
 </script>
 
-<section>
-	<ul>
+<section class="mx-auto max-w-5xl w-full mt-4">
+	<ul class=" list-none mx-auto space-y-4">
 		{#each data.posts as post}
-			<li class="post">
-				<a href={post.slug} class="title">{post.title}</a>
-				<p class="date">{formatDate(post.date)}</p>
-				<p class="description">{post.description}</p>
+			<li>
+				<PostCard {post} />
 			</li>
 		{/each}
 	</ul>
