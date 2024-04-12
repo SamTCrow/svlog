@@ -1,13 +1,17 @@
 import { dev } from '$app/environment';
+import { getCategories } from './getCategories';
+import { getTags } from './getTags';
 
 export const title = "The Crow's nest";
-export const desription = 'A simple svelte blog';
+export const description = 'Programming, magic and videogames';
 export const url = dev ? 'http://localhost:5173/' : 'https://crowinger.com/';
 
 export const links = {
 	About: '/About',
-	Posts: '/Posts',
 	Tags: '/Tags',
-	Contacts: '/Contacts',
-	RSS: '/RSS'
+	Categories: '/Categories',
+	Contacts: '/Contacts'
 };
+
+export const tags = getTags();
+export const categories = getCategories();

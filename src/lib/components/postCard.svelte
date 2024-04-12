@@ -14,7 +14,7 @@
 	</div>
 	<section class="p-4 grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-4 lg:gap-8">
 		{#if post.image}
-			<img src={post.image} class="mx-auto pb-4" alt={post.title} />
+			<img src={post.image} class="mx-auto pb-4 rounded-md" alt={post.title} />
 		{/if}
 		<p class="lg:text-right">{post.description}</p>
 	</section>

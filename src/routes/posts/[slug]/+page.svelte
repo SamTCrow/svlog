@@ -3,7 +3,7 @@
 
 	export let data;
 	const { meta } = data;
-	const readingTime = '2m';
+	const readingTime = meta.readingTime.text;
 </script>
 
 <svelte:head>
@@ -15,7 +15,7 @@
 <article class="max-w-5xl prose dark:prose-invert w-full mx-auto mt-4">
 	<div class="flex justify-between text-sm">
 		<time datetime={meta.date}>{formatDate(meta.date)}</time>
-		<span> · {readingTime} read</span>
+		<span>{readingTime}</span>
 	</div>
 	<h1>{meta.title}</h1>
 	<img src={meta.image} alt={meta.title} class="mx-auto w-full" />
