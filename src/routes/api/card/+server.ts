@@ -18,7 +18,7 @@ export async function GET({ url, platform }) {
 				await platform.env.MAGIC_CARD.put(query, JSON.stringify(card));
 				return json(card);
 			}
-			return json(cache);
+			return json(JSON.parse(cache));
 		} catch (e) {
 			error(404, 'Something went wrong.');
 		}
