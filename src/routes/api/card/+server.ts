@@ -1,4 +1,5 @@
 import { getCards } from '$lib/getCards.js';
+import type { Card } from '$lib/types.js';
 import { json } from '@sveltejs/kit';
 import { error } from '@sveltejs/kit';
 
@@ -11,10 +12,11 @@ export async function GET({ url, platform }) {
 			if (!platform) {
 				error(502, 'No platform!!');
 			}
-      const cache = await platform.env.MAGIC_CARD.get(query);
-      if (cache) {
+      const cache: Card = await platform.env.MAGIC_CARD.get(query);
+      if (cache !== null) {
        return json(cache); 
       }
+
 			const card = await getCards(query);
 			await platform.env.MAGIC_CARD.put(query, card);
 			return json(card);
