@@ -14,7 +14,7 @@ export async function GET({ url, platform }) {
 
 			const value = platform.env.MAGIC_CARD.get(query);
 
-			if (value === null) {
+			if (!value) {
 				const card = await getCards(query);
 				platform.env.MAGIC_CARD.put(query, card);
 				return json(card);
