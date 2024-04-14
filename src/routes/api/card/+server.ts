@@ -12,14 +12,13 @@ export async function GET({ url, platform }) {
 			if (!platform) {
 				error(502, 'No platform!!');
 			}
-      const cache: Card = await platform.env.MAGIC_CARD.get(query);
-      if (cache !== null) {
-       return json(cache); 
-      }
-
-			const card = await getCards(query);
-			await platform.env.MAGIC_CARD.put(query, card);
-			return json(card);
+			const cache: Card = await platform.env.MAGIC_CARD.get(query);
+			if (cache === null) {
+				const card = await getCards(query);
+				await platform.env.MAGIC_CARD.put(query, card);
+				return json(card);
+			}
+			return json(cache);
 		} catch (e) {
 			error(404, 'Something went wrong.');
 		}
