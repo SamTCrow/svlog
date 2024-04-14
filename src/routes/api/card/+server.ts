@@ -1,5 +1,4 @@
 import { getCards } from '$lib/getCards.js';
-import type { Card } from '$lib/types.js';
 import { json } from '@sveltejs/kit';
 import { error } from '@sveltejs/kit';
 
