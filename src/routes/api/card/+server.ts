@@ -13,7 +13,7 @@ export async function GET({ url, platform }) {
 			}
 
 			const card = await getCards(query);
-			platform.env.MAGIC_CARD.put(query, card);
+			platform.env.MAGIC_CARD.put(query, JSON.stringify(card));
 			return json(card);
 		} catch (e) {
 			error(404, 'Something went wrong.');
