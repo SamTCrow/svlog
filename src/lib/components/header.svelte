@@ -86,7 +86,7 @@
 				</div>
 			</li>
 			<li>
-				<a href="/about" class="btn btn-sm capitalize text-lg"> About </a>
+				<a href="/rss.xml" class="btn btn-sm capitalize text-lg"> RSS </a>
 			</li>
 		</ul>
 		<div><LightSwitch /></div>

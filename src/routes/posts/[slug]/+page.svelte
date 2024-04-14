@@ -10,15 +10,18 @@
 	<title>{data.meta.title}</title>
 	<meta property="og:type" content="article" />
 	<meta property="og:title" content={data.meta.title} />
+	<meta name="description" content={data.meta.description} />
 </svelte:head>
 
-<article class="max-w-5xl prose dark:prose-invert w-full mx-auto mt-4">
-	<div class="flex justify-between text-sm">
+<article class="max-w-5xl prose dark:prose-invert w-full mx-auto mt-4 px-2">
+	<div class="flex justify-between text-sm mb-2">
 		<time datetime={meta.date}>{formatDate(meta.date)}</time>
 		<span>{readingTime}</span>
 	</div>
-	<h1>{meta.title}</h1>
-	<img src={meta.image} alt={meta.title} class="mx-auto w-full" />
+	<h1 class="h1">{meta.title}</h1>
+	{#if meta.image}
+		<img src={meta.image} alt={meta.title} class="mx-auto w-full px-2q" />
+	{/if}
 	<div>
 		<svelte:component this={data.content} />
 	</div>

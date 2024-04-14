@@ -1,6 +1,6 @@
 import { error } from '@sveltejs/kit';
 import type { Post } from '$lib/types.js';
-
+export const prerender = 'auto';
 export async function load({ params, fetch }) {
 	try {
 		const res = await fetch(`/api/posts`);

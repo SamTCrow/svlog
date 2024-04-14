@@ -1,3 +1,4 @@
+
 import { getPosts } from './getPost';
 
 export async function getTags() {

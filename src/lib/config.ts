@@ -4,7 +4,7 @@ import { getTags } from './getTags';
 
 export const title = "The Crow's nest";
 export const description = 'Programming, magic and videogames';
-export const url = dev ? 'http://localhost:5173/' : 'https://svlog.pages.dev';
+export const url = dev ? 'http://localhost:5173/' : 'https://crowinger.com/';
 
 export const links = {
 	About: '/About',

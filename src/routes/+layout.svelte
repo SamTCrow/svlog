@@ -18,9 +18,9 @@
 	import { computePosition, autoUpdate, offset, shift, flip, arrow } from '@floating-ui/dom';
 	import { storePopup } from '@skeletonlabs/skeleton';
 	import PageTransition from './transition.svelte';
-	import * as config from '$lib/config';
 
 	export let data;
+
 
 	let popupHoverTags: PopupSettings = {
 		event: 'click',
@@ -97,7 +97,7 @@
 				</div>
 			</li>
 			<li>
-				<a href="/about" class="btn btn-sm capitalize text-lg"> About </a>
+				<a href="/rss.xml" class="btn btn-sm capitalize text-lg"> RSS </a>
 			</li>
 		</ul>
 		<div><LightSwitch /></div>
