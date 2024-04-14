@@ -11,9 +11,12 @@ export async function GET({ url, platform }) {
 			if (!platform) {
 				error(502, 'No platform!!');
 			}
-
+      const cache = await platform.env.MAGIC_CARD.get(query);
+      if (cache) {
+       return json(cache); 
+      }
 			const card = await getCards(query);
-			await platform.env.MAGIC_CARD.put(query, JSON.stringify(card));
+			await platform.env.MAGIC_CARD.put(query, card);
 			return json(card);
 		} catch (e) {
 			error(404, 'Something went wrong.');
