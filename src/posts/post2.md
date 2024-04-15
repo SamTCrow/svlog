@@ -19,5 +19,5 @@ Media inside the **static** folder is served from `/`.
 <CardImage cardName='llanowar elves' />
 
 This is a magic card <CardName cardName="llanowar elves" />
-
+This is another magic card <CardName cardName="muldrotha" />
 ![Svelte](/favicon.png)
