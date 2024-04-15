@@ -1,5 +1,4 @@
 <script lang="ts">
-	
 	import type { Card } from '$lib/types';
 	import { popup, type PopupSettings } from '@skeletonlabs/skeleton';
 	import { onMount } from 'svelte';
@@ -9,7 +8,7 @@
 	let card: Promise<Card>;
 
 	onMount(async () => {
-		const response = await fetch(`/api/card?q=${cardName}`);
+		const response = await fetch(`https://crowinger.com/api/card?q=${cardName}`);
 		if (!response.ok) {
 			return cardName;
 		}
