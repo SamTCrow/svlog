@@ -4,23 +4,27 @@
 
 	export let cardName: string;
 
-	let card: Promise<Card>;
+	let card: Card;
 
 	onMount(async () => {
 		const response = await fetch(`https://crowinger.com/api/card?q=${cardName}`);
 		if (!response.ok) {
-			return cardName;
+			console.log(response);
 		}
-		card = response.json();
+		card = await response.json();
 	});
 </script>
 
-{#await card}
-	{cardName}
-{:then card}
-	<div class="w-full mx-auto">
-		<a href={card.url} title={cardName} class="mx-auto">
-			<img src={card.img} alt={cardName} loading="lazy" class="max-w-sm mx-auto" />
-		</a>
-	</div>
-{/await}
+{#if card}
+	{#await card}
+		{cardName}
+	{:then card}
+		<div class="w-full mx-auto">
+			<a href={card.url} title={cardName} class="mx-auto">
+				<img src={card.img} alt={cardName} loading="lazy" class="max-w-sm mx-auto" />
+			</a>
+		</div>
+	{/await}
+{:else}
+	<p>{cardName}</p>
+{/if}

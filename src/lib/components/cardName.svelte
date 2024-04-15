@@ -5,14 +5,16 @@
 
 	export let cardName: string;
 
-	let card: Promise<Card>;
+	let card: Card;
 
 	onMount(async () => {
-		const response = await fetch(`https://crowinger.com/api/card?q=${cardName}`);
+		const response = await fetch(`https://crowinger.com/api/card?q=${cardName}`, {
+			mode: 'no-cors'
+		});
 		if (!response.ok) {
 			return cardName;
 		}
-		card = response.json();
+		card = await response.json();
 	});
 
 	const popupCard: PopupSettings = {
@@ -22,16 +24,20 @@
 	};
 </script>
 
-{#await card}
-	{cardName}
-{:then card}
-	<span use:popup={popupCard}><a href={card.url} title={cardName}>{card.title}</a></span>
+{#if card}
+	{#await card}
+		{cardName}
+	{:then card}
+		<span use:popup={popupCard}><a href={card.url} title={cardName}>{card.title}</a></span>
 
-	<img
-		src={card.img}
-		alt={cardName}
-		loading="lazy"
-		class=" max-w-[15rem] overflow-visible"
-		data-popup="popupCard"
-	/>
-{/await}
+		<img
+			src={card.img}
+			alt={cardName}
+			loading="lazy"
+			class=" max-w-[15rem] overflow-visible"
+			data-popup="popupCard"
+		/>
+	{/await}
+{:else}
+  <span>{cardName}</span>
+{/if}
