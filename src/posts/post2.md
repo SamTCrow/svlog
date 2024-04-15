@@ -7,8 +7,17 @@ published: true
 category: Article
 ---
 
+<script>
+  import CardName from '$lib/components/cardName.svelte'
+  import CardImage from '$lib/components/cardImage.svelte'
+</script>
+
 ## Svelte
 
 Media inside the **static** folder is served from `/`.
+
+<CardImage cardName='llanowar elves' />
+
+This is a magic card <CardName cardName="llanowar elves" />
 
 ![Svelte](/favicon.png)
