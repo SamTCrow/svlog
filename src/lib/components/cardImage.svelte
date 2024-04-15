@@ -21,7 +21,7 @@
 	{:then card}
 		<div class="w-full mx-auto">
 			<a href={card.url} title={cardName} class="mx-auto">
-				<img src={card.img} alt={cardName} loading="lazy" class="max-w-sm mx-auto" />
+				<img src={card.img} alt={cardName} loading="lazy" class="lg:max-w-sm mx-auto w-full" />
 			</a>
 		</div>
 	{/await}

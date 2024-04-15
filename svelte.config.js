@@ -12,7 +12,17 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 const mdsvexOptions = {
 	extensions: ['.md'],
 	remarkPlugins: [remarkUnwrapImages, readingTime],
-	rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings, toc],
+	rehypePlugins: [
+		rehypeSlug,
+		[
+			rehypeAutolinkHeadings,
+			{
+				behavior: 'wrap',
+				properties: { className: ['heading-link'], title: 'Permalink', ariaHidden: 'true' }
+			}
+		],
+		toc
+	],
 	layout: {
 		_: './src/mdsvex.svelte'
 	},

@@ -21,7 +21,6 @@
 
 	export let data;
 
-
 	let popupHoverTags: PopupSettings = {
 		event: 'click',
 		target: 'popupHoverTags',
@@ -112,7 +111,7 @@
 		/></svelte:fragment
 	>
 	<svelte:fragment slot="sidebarLeft"></svelte:fragment>
-	<svelte:fragment slot="sidebarRight"></svelte:fragment>
+	<svelte:fragment slot="sidebarRight"><div class="table-of-contents"></div></svelte:fragment>
 	<!-- (pageHeader) -->
 	<svelte:fragment slot="pageHeader"></svelte:fragment>
 	<!-- Router Slot -->

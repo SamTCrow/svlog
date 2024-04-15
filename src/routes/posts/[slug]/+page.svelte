@@ -2,6 +2,7 @@
 	import { formatDate } from '$lib/utils/formatDate';
 
 	export let data;
+
 	const { meta } = data;
 	const readingTime = meta.readingTime.text;
 </script>
@@ -13,7 +14,7 @@
 	<meta name="description" content={data.meta.description} />
 </svelte:head>
 
-<article class="max-w-5xl prose dark:prose-invert w-full mx-auto mt-4 px-2">
+<article class="max-w-4xl prose dark:prose-invert w-full mx-auto mt-4 px-2">
 	<div class="flex justify-between text-sm mb-2">
 		<time datetime={meta.date}>{formatDate(meta.date)}</time>
 		<span>{readingTime}</span>

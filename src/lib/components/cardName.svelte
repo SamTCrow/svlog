@@ -34,10 +34,10 @@
 			src={card.img}
 			alt={cardName}
 			loading="lazy"
-			class=" max-w-[15rem] overflow-visible"
+			class=" lg:max-w-[15rem] max-w-[5rem]"
 			data-popup="popupCard"
 		/>
 	{/await}
 {:else}
-  <span>{cardName}</span>
+	<span>{cardName}</span>
 {/if}
