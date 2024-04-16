@@ -18,7 +18,11 @@ const mdsvexOptions = {
 			rehypeAutolinkHeadings,
 			{
 				behavior: 'wrap',
-				properties: { className: ['heading-link'], title: 'Permalink', ariaHidden: 'true' }
+				properties: {
+					className: ['heading-link no-underline'],
+					title: 'Permalink',
+					ariaHidden: 'true'
+				}
 			}
 		],
 		toc

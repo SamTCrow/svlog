@@ -6,9 +6,10 @@ tags: ['sveltekit']
 published: true
 category: Article
 image: https://placehold.co/600x400
+author: sam
 ---
 
-## Markdown
+# Markdown
 
 Hey friends! 👋
 

@@ -10,6 +10,7 @@ export type Post = {
 	readingTime: {
 		text: string;
 	};
+	author: string;
 };
 
 export type Card = {

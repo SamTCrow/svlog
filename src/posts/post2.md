@@ -5,6 +5,7 @@ date: '2023-4-16'
 tags: [sveltekit, svelte]
 published: true
 category: Article
+author: sam
 ---
 
 <script>
@@ -12,7 +13,7 @@ category: Article
   import CardImage from '$lib/components/cardImage.svelte'
 </script>
 
-## Svelte
+# Svelte
 
 Media inside the **static** folder is served from `/`.
 

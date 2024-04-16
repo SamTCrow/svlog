@@ -1,10 +1,13 @@
 <script lang="ts">
+	import { getAuthor } from '$lib/utils/authors';
 	import { formatDate } from '$lib/utils/formatDate';
+	import { Avatar } from '@skeletonlabs/skeleton';
 
 	export let data;
 
 	const { meta } = data;
 	const readingTime = meta.readingTime.text;
+	const author = getAuthor(meta.author);
 </script>
 
 <svelte:head>
@@ -26,9 +29,14 @@
 	<div>
 		<svelte:component this={data.content} />
 	</div>
-	<div class="space-x-2">
-		{#each meta.tags as tag}
-			<a href="/tags/{tag}" class="chip variant-soft hover:variant-filled">{tag}</a>
-		{/each}
+	<div class="flex justify-between items-center">
+		<div class="flex items-center gap-3">
+			<Avatar src={author.image} width="w-12" rounded="rounded-full" /><span>{author.name}</span>
+		</div>
+		<div class="space-x-2">
+			{#each meta.tags as tag}
+				<a href="/tags/{tag}" class="chip variant-soft hover:variant-filled">{tag}</a>
+			{/each}
+		</div>
 	</div>
 </article>
