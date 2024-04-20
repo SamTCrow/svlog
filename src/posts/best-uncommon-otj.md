@@ -150,7 +150,7 @@ If you can also plot it, it become insanely good.
 
 - <CardName cardName="Beastbond Outcaster" /> is a nice body that can replace itself.
 - <CardName cardName="Intrepid Stablemaster"/> a mana dork with reach, really good in a mount deck.
-- <CardName cardName="Spinewoods Armadillo"/> grab a land nad gain life early game or put a giant, hard to deal with threat on the board lategame.
+- <CardName cardName="Spinewoods Armadillo"/> grab a land and gain life early game or put a giant, hard to deal with threat on the board lategame.
 
 ## Multicolor
 
@@ -188,4 +188,4 @@ Cheap and really good if you can draft a lot of vehicles.
 - <CardName cardName="Jolene, Plundering Pugilist" /> has good stats and it counts itself for the ability.
 - <CardName cardName="Wrangler of the Damned" /> if you can reliably trigger it, it will win you games.
 - <CardName cardName="Slick Sequence" /> shock and draw, good in a double spell shell.
-- <CardName cardName="Ruthless Lawbringer" /> exchange a creature you don't need for everythin.
+- <CardName cardName="Ruthless Lawbringer" /> exchange a creature you don't need for anything you want to kill.
