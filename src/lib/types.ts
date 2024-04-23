@@ -11,6 +11,11 @@ export type Post = {
 		text: string;
 	};
 	author: string;
+	headings: {
+		depth: number;
+		value: string;
+		id: string;
+	}[];
 };
 
 export type Card = {

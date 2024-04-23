@@ -7,11 +7,12 @@ import toc from '@jsdevtools/rehype-toc';
 import rehypeSlug from 'rehype-slug';
 import readingTime from 'mdsvex-reading-time';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import remarkHeadings from '@vcarl/remark-headings';
 
 /** @type {import('mdsvex').MdsvexOptions} */
 const mdsvexOptions = {
 	extensions: ['.md'],
-	remarkPlugins: [remarkUnwrapImages, readingTime],
+	remarkPlugins: [remarkUnwrapImages, readingTime, headings],
 	rehypePlugins: [
 		rehypeSlug,
 		[
@@ -60,4 +61,22 @@ const config = {
 		adapter: adapter()
 	}
 };
+
+function headings() {
+	return function transformer(tree, vfile) {
+		// run remark-headings plugin
+		remarkHeadings()(tree, vfile);
+
+		// include the headings data in mdsvex frontmatter
+		vfile.data.fm ??= {};
+		vfile.data.fm.headings = vfile.data.headings.map((heading) => ({
+			...heading,
+			// slugify heading.value
+			id: heading.value
+				.toLowerCase()
+				.replace(/\s/g, '-')
+				.replace(/[^a-z0-9-]/g, '')
+		}));
+	};
+}
 export default config;

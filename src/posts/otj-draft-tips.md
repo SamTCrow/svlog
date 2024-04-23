@@ -20,7 +20,7 @@ Howdy partners!
 
 After extensive testing, playing multiple games in the new format, we are ready to give you some basic guideline in the wild wild magic west of Outlaws of Thunder Junction.
 
-# Fix You Mana Early
+# Fix Your Mana Early
 
 This set is full of bombs and removal and for this very reason you don't need to pick every niche good card and removal you came across early on.
 

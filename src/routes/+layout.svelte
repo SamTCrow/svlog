@@ -102,24 +102,9 @@
 		<div><LightSwitch /></div>
 	</nav>
 </Drawer>
-<AppShell>
-	<svelte:fragment slot="header"
-		><Header
-			on:openDrawer={drawerOpen}
-			tags={data.tags}
-			categories={data.categories}
-		/></svelte:fragment
-	>
-	<svelte:fragment slot="sidebarLeft"></svelte:fragment>
-	<svelte:fragment slot="sidebarRight"><div class="table-of-contents"></div></svelte:fragment>
-	<!-- (pageHeader) -->
-	<svelte:fragment slot="pageHeader"></svelte:fragment>
-	<!-- Router Slot -->
-	<PageTransition url={data.url}>
-		<slot />
-	</PageTransition>
-	<!-- ---- / ---- -->
-	<svelte:fragment slot="pageFooter"><Footer /></svelte:fragment>
-	<!-- (footer) -->
-	<svelte:fragment slot="footer"></svelte:fragment>
-</AppShell>
+<Header on:openDrawer={drawerOpen} tags={data.tags} categories={data.categories} />
+<PageTransition url={data.url}>
+	<slot />
+</PageTransition>
+
+<Footer />
